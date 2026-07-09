@@ -63,7 +63,6 @@
             border-bottom: 1px solid var(--border-color);
         }
 
-        /* صندوق اللوغو المطور لضمان سلامة النص في الموبايل */
         .logo-container {
             display: flex;
             align-items: center;
@@ -263,7 +262,6 @@
             flex-grow: 1;
         }
 
-        /* طريقة الربط الذكية لأزرار الأفعال والمشاهدة */
         .read-more-btn, .open-modal-btn {
             display: inline-flex;
             align-items: center;
@@ -324,6 +322,8 @@
             font-weight: 600;
             color: #fff;
             transition: opacity 0.3s, transform 0.2s;
+            cursor: pointer;
+            border: none;
         }
 
         .share-btn:hover {
@@ -458,7 +458,7 @@
     <!-- واجهة الموقع الرئيسية -->
     <section class="hero">
         <h1>تجربة كاست | Tajruba Cast</h1>
-        <p>مساحة رقمية وفكرية تُعنى ببناء الوعي، مراجعة وتصحيح المفاهيم الفكرية والاجتماعية السائدة، ومشاركة قراءات وتجارب تصنع فارقاً حقيقياً في الإدراك الإنساني.</p>
+        <p>مساحة رقمية وفكرية تُعنى ببناء الوعي، مراجعة وتصحيح المفاهية الفكرية والاجتماعية السائدة، ومشاركة قراءات وتجارب تصنع فارقاً حقيقياً في الإدراك الإنساني.</p>
         <div class="hero-buttons">
             <a href="#episodes" class="btn-filled">شاهد الحلقات</a>
             <a href="#blog" class="btn-action" style="padding: 14px 30px;">اقرأ آخر المقالات</a>
@@ -512,14 +512,14 @@
                         <span>📺 شاهد الحلقة الكاملة على يوتيوب</span>
                     </a>
 
-                    <!-- أزرار المشاركة السريعة أسفل الكارد مباشرة -->
+                    <!-- ✨ تحديث: أزرار ذكية ترسل رابط موقعك والمدونة بدلاً من يوتيوب ✨ -->
                     <div class="share-box">
-                        <a href="https://api.whatsapp.com/send?text=انصحكم بقراءة هذا المقال الفكري المميز من تجربة كاست: حر أو عبد؟ كيف تشكل التصورات وعينا؟ %0A https://youtu.be/VaPPuAnLRlw" target="_blank" class="share-btn share-whatsapp">
+                        <button onclick="shareOnWhatsApp()" class="share-btn share-whatsapp">
                             <span>💬 واتساب</span>
-                        </a>
-                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://youtu.be/VaPPuAnLRlw" target="_blank" class="share-btn share-facebook">
+                        </button>
+                        <button onclick="shareOnFacebook()" class="share-btn share-facebook">
                             <span>👍 فيسبوك</span>
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -581,20 +581,20 @@
                 <p>طالب دخل الامتحان ونجح، فقال بمجرد خروجه: "نجحت لأني درست، انتهى الأمر". صحيح أن الدراسة سبب من أسباب النجاح، لكن قد يكون هناك طلاب آخرون درسوا أكثر منه وتفوّقوا في الفهم، ثم أصابهم مرض أو ظرف طارئ منعهم من التركيز.</p>
                 <p>هذا الطالب نسي أن الله هيّأ له أسباب النجاح كلها: أن يستيقظ في وقته، ألا يقع في ازدحام، ألا يتعرض لموقف يشتّت تركيزه... فحين يقول "نجحتُ لأني درست" فقط، فهو يكرر - دون أن يشعر - المنطق نفسه الذي قاله قارون: "إنما أوتيته على علم عندي".</p>
 
-                <h3>الخلاصة: لماذا تهمّنا التصورات?</h3>
+                <h3>الخلاصة: لماذا تهمّنا التصورات؟</h3>
                 <p>من خلال هذه الأمثلة، نصل إلى أن التصورات هي التي تُنتج وعينا، وعلاقاتنا، وأخلاقنا، ومعتقداتنا، وحتى علاقتنا بالله وبأنفسنا وبالناس من حولنا.</p>
                 <p>وهنا يُطرح السؤال المحوري لهذه الحلقة:</p>
                 <p style="font-weight: bold; color: var(--gold-accent); text-align: center; margin: 20px 0;">إذا كانت التصورات بهذه الأهمية، فهل يُعقل أن يخلق الله - الخالق البارئ العليم الحكيم - الإنسان المكلَّف، وهو يعلم أن هذا الإنسان سيتلقى "متلقّيات" مختلفة على مدار حياته... ثم يتركه دون أدوات يحلل بها هذه المتلقّيات ويبني عليها وعيه؟</p>
                 <p>هذا السؤال هو ما ستجيب عنه الحلقات القادمة من هذه السلسلة.</p>
                 
-                <!-- أزرار مشاركة إضافية داخل المقال المقروء لتشجيع القارئ بعد إنهاء القراءة -->
+                <!-- ✨ تحديث: أزرار مشاركة إضافية داخل المقال المقروء ترسل رابط الموقع ✨ -->
                 <div class="share-box" style="margin-top: 30px; padding-top: 20px;">
-                    <a href="https://api.whatsapp.com/send?text=مقال فكري رائع من تجربة كاست: حر أو عبد؟ كيف تشكل التصورات وعينا؟ %0A https://youtu.be/VaPPuAnLRlw" target="_blank" class="share-btn share-whatsapp">
+                    <button onclick="shareOnWhatsApp()" class="share-btn share-whatsapp">
                         <span>💬 شارك عبر واتساب</span>
-                    </a>
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://youtu.be/VaPPuAnLRlw" target="_blank" class="share-btn share-facebook">
+                    </button>
+                    <button onclick="shareOnFacebook()" class="share-btn share-facebook">
                         <span>👍 شارك عبر فيسبوك</span>
-                    </a>
+                    </button>
                 </div>
 
                 <p style="font-size: 0.9rem; color: var(--text-muted); border-top: 1px solid var(--border-color); padding-top: 15px; margin-top: 30px;">مقالة مبنية على تفريغ الحلقة الأولى من السلسلة الصوتية - نُشرت على مدونة القناة.</p>
@@ -613,7 +613,7 @@
         <p>&copy; 2026 تجربة كاست. جميع الحقوق محفوظة. صُنع بشغف لترك أثرٍ معرفي للأجيال.</p>
     </footer>
 
-    <!-- أكواد جافاسكريبت البسيطة لتشغيل النافذة المنبثقة للـ Modal -->
+    <!-- أكواد جافاسكريبت البسيطة لتشغيل النافذة والوظائف الذكية للمشاركة -->
     <script>
         function openModal(id) {
             document.getElementById(id).style.display = "block";
@@ -628,6 +628,20 @@
                 event.target.style.display = "none";
                 document.body.style.overflow = "auto";
             }
+        }
+
+        /* 🧠 دوال جافاسكريبت الذكية لجلب رابط موقعك الحالي بدقة وإرساله للمستقبل 🧠 */
+        function shareOnWhatsApp() {
+            var currentUrl = window.location.href;
+            var text = "أنصحكم بقراءة هذا المقال الفكري المميز من تجربة كاست: 'حر أو عبد؟ كيف تشكل التصورات وعينا؟' \nاقرأ المقال كاملاً من هنا:\n" + currentUrl;
+            var whatsappUrl = "https://api.whatsapp.com/send?text=" + encodeURIComponent(text);
+            window.open(whatsappUrl, '_blank');
+        }
+
+        function shareOnFacebook() {
+            var currentUrl = window.location.href;
+            var facebookUrl = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(currentUrl);
+            window.open(facebookUrl, '_blank');
         }
     </script>
 

@@ -17,6 +17,7 @@
             --text-muted: #94a3b8;
             --gold-accent: #c5a059;
             --gold-hover: #b38f48;
+            --yt-red: #ff0000;
         }
 
         html {
@@ -187,6 +188,8 @@
             overflow: hidden;
             border: 1px solid var(--border-color);
             transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
         }
 
         .card:hover {
@@ -194,20 +197,46 @@
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
         }
 
-        .video-container {
+        /* غلاف تفاعلي بديل للمشغل الذي كان يتعطل */
+        .video-thumbnail-placeholder {
             position: relative;
             width: 100%;
             padding-top: 56.25%;
-            background-color: #000;
+            background: linear-gradient(135deg, #1e222b 0%, #0f1115 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
         }
 
-        .video-container iframe {
+        .play-button-overlay {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 65px;
+            height: 65px;
+            background-color: var(--yt-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 20px rgba(255, 0, 0, 0.4);
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .card:hover .play-button-overlay {
+            transform: translate(-50%, -50%) scale(1.1);
+            background-color: #cc0000;
+        }
+
+        .play-icon {
+            width: 0;
+            height: 0;
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+            border-left: 20px solid white;
+            margin-left: 6px; /* لضبط التوسط البصري للمثلث */
         }
 
         .blog-meta {
@@ -219,6 +248,9 @@
 
         .card-content {
             padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
         }
 
         .card-title {
@@ -232,20 +264,28 @@
             font-size: 0.95rem;
             color: var(--text-muted);
             margin-bottom: 20px;
+            flex-grow: 1;
         }
 
-        .read-more {
-            color: var(--gold-accent);
+        .btn-card-action {
+            display: block;
+            text-align: center;
+            background-color: #1e222b;
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            padding: 10px;
+            border-radius: 6px;
             text-decoration: none;
-            font-size: 0.95rem;
             font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            margin-top: auto;
         }
 
-        .read-more:hover {
-            text-decoration: underline;
+        .btn-card-action:hover {
+            background-color: var(--gold-accent);
+            color: var(--bg-main);
+            border-color: var(--gold-accent);
         }
 
         footer {
@@ -305,36 +345,41 @@
         <h1>تجربة كاست | Tajruba Cast</h1>
         <p>مساحة رقمية وفكرية تُعنى ببناء الوعي، مراجعة وتصحيح المفاهيم الفكرية والاجتماعية السائدة، ومشاركة قراءات وتجارب تصنع فارقاً حقيقياً في الإدراك الإنساني.</p>
         <div class="hero-buttons">
-            <a href="#episodes" class="btn-filled">شاهد الحلقات</a>
+            <a href="#episodes" class="btn-filled">تصفح الحلقات</a>
             <a href="#blog" class="btn-action" style="padding: 14px 30px;">اقرأ آخر المقالات</a>
         </div>
     </section>
 
     <section id="episodes">
         <h2 class="section-title">أحدث الحلقات والنقاشات</h2>
-        <p class="section-subtitle">تابع إنتاجنا المرئي مباشرة عبر موقعنا الرسمي لتجربة مشاهدة سريعة وبدون حجب.</p>
+        <p class="section-subtitle">اضغط على أي حلقة أدناه لفتحها مباشرة والاستماع إليها على قناتنا الرسمية في يوتيوب.</p>
         
         <div class="grid">
-            <!-- الكارت الأول: فيديو الحلقة الأحدث مباشر -->
+            <!-- الكارت الأول الخاص بالفيديوهات المرفوعة حديثاً -->
             <div class="card">
-                <div class="video-container">
-                    <!-- تم التعديل لعرض فيديو مباشر مدعوم من مشغل يوتيوب بالكامل -->
-                    <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=Tajruba_Cast" allowfullscreen></iframe>
-                </div>
+                <a href="https://www.youtube.com/@Tajruba_Cast/videos" target="_blank" class="video-thumbnail-placeholder">
+                    <div class="play-button-overlay">
+                        <div class="play-icon"></div>
+                    </div>
+                </a>
                 <div class="card-content">
-                    <h3 class="card-title">آخر إنتاجات القناة</h3>
-                    <p class="card-description">هنا يتم جلب وتحديث الفيديوهات الأخيرة التي تم رفعها على القناة تلقائياً للمشاهد المعاصر.</p>
+                    <h3 class="card-title">آخر إنتاجات وحلقات القناة</h3>
+                    <p class="card-description">تابع أحدث الحلقات والملفات الفكرية المرفوعة حديثاً على القناة مباشرة فور نزولها وبأعلى دقة تشغيل.</p>
+                    <a href="https://www.youtube.com/@Tajruba_Cast/videos" target="_blank" class="btn-card-action">شاهد الحلقات على YouTube</a>
                 </div>
             </div>
 
-            <!-- الكارت الثاني: فيديو تعريفي أو حلقة مميزة أخرى -->
+            <!-- الكارت الثاني الخاص بقوائم التشغيل المرتبة -->
             <div class="card">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/videoseries?list=PL_JtrHRfPulyS5b005pTQ" allowfullscreen></iframe>
-                </div>
+                <a href="https://www.youtube.com/@Tajruba_Cast/playlists" target="_blank" class="video-thumbnail-placeholder">
+                    <div class="play-button-overlay">
+                        <div class="play-icon"></div>
+                    </div>
+                </a>
                 <div class="card-content">
-                    <h3 class="card-title">قوائم التشغيل الفكرية</h3>
-                    <p class="card-description">استعرض باقات الحلقات والملفات المنظمة التي نناقش فيها الوعي وصناعة الفكر وتفكيك المفاهيم.</p>
+                    <h3 class="card-title">قوائم التشغيل والسلاسل الكاملة</h3>
+                    <p class="card-description">تصفح السلاسل المنظمة والمبوبة التي نناقش من خلالها قضايا الوعي، الفكر، وبناء المفاهيم بصورة متكاملة.</p>
+                    <a href="https://www.youtube.com/@Tajruba_Cast/playlists" target="_blank" class="btn-card-action">استعرض السلاسل على YouTube</a>
                 </div>
             </div>
         </div>

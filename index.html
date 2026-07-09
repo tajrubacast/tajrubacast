@@ -95,24 +95,25 @@
 
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
 
-        /* ستايل بطاقات المدونة والمقالات */
-        .blog-card {
+        /* ستايل البطاقات الغني والتفاعلي */
+        .card {
             background-color: var(--bg-card);
             border-radius: 8px;
             border: 1px solid var(--border-color);
             padding: 30px;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
         }
 
-        .blog-card:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); border-color: rgba(197, 160, 89, 0.3); }
-        .blog-meta { font-size: 0.85rem; color: var(--gold-accent); margin-bottom: 12px; font-weight: 600; }
-        .blog-title { font-size: 1.4rem; color: #fff; margin-bottom: 15px; font-weight: 700; }
-        .blog-excerpt { font-size: 1rem; color: var(--text-muted); margin-bottom: 25px; flex-grow: 1; text-align: justify; }
-        
-        /* زر التحويل الجاذب للانتقال لليوتيوب بدقة وسهولة */
-        .btn-to-youtube {
+        .card:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); border-color: rgba(197, 160, 89, 0.3); }
+        .card-meta { font-size: 0.85rem; color: var(--gold-accent); margin-bottom: 10px; font-weight: 600; }
+        .card-title { font-size: 1.4rem; color: #fff; margin-bottom: 15px; font-weight: 700; }
+        .card-text { font-size: 1rem; color: var(--text-muted); margin-bottom: 25px; text-align: justify; flex-grow: 1; }
+
+        /* الأزرار التفاعلية الذكية الموجهة لليوتيوب بدقة وعينات حمراء لافتة */
+        .btn-card-action {
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -126,24 +127,10 @@
             font-weight: 600;
             font-size: 0.9rem;
             transition: all 0.3s;
+            margin-top: auto;
         }
 
-        .btn-to-youtube:hover { background-color: var(--yt-red); color: #fff; border-color: var(--yt-red); transform: scale(1.02); }
-
-        /* ستايل كروت مسارات اليوتيوب المباشرة في أسفل الواجهة */
-        .yt-channel-card {
-            background-color: #11141a;
-            border: 1px dashed var(--border-color);
-            border-radius: 8px;
-            padding: 30px;
-            text-align: center;
-            transition: all 0.3s;
-        }
-
-        .yt-channel-card:hover { border-color: var(--gold-accent); background-color: var(--bg-card); }
-        .yt-card-title { font-size: 1.3rem; color: #fff; margin-bottom: 12px; font-weight: 600; }
-        .btn-link-direct { color: var(--gold-accent); text-decoration: none; font-weight: 600; font-size: 0.95rem; display: inline-block; margin-top: 15px; transition: color 0.3s; }
-        .btn-link-direct:hover { color: var(--text-primary); text-decoration: underline; }
+        .btn-card-action:hover { background-color: var(--yt-red); color: #fff; border-color: var(--yt-red); transform: scale(1.02); }
 
         footer { background-color: #090a0d; padding: 40px 20px; text-align: center; font-size: 0.9rem; color: var(--text-muted); }
 
@@ -166,54 +153,61 @@
     </header>
 
     <div class="hero">
-        <h1>مدونة تجربة كاست المكتوبة</h1>
+        <h1>منصة تجربة كاست الرقمية</h1>
         <p>مساحة معرفية تُعنى بمراجعة وتصحيح المفاهيم الفكرية والاجتماعية السائدة بأسلوب تحليلي رصين، وبناء جسور الوعي الإنساني المكتوب والمرئي.</p>
     </div>
 
-    <!-- قسم المدونة الرئيسي (محور التركيز واقتران النصوص بالروابط الصريحة) -->
-    <section id="blog-section">
-        <h2 class="section-title">آخر المقالات والقراءات الفكرية</h2>
+    <!-- استعادة الشكل الجميل المتكامل للقوائم مع تحديث روابط وأزرار اليوتيوب -->
+    <section id="main-sections">
+        <h2 class="section-title">أقسام ومسارات المنصة المعرفية</h2>
         <div class="grid">
             
-            <!-- المقال الأول المنهجي -->
-            <div class="blog-card">
-                <div class="blog-meta">الفكر والوعي • 9 يوليو 2026</div>
-                <h3 class="blog-title">صناعة الوعي في عصر التدفق المعرفي</h3>
-                <p class="blog-excerpt">كيف يمكن للإنسان المعاصر الحفاظ على توازنه الفكري وتصفية المفاهيم وسط هذا الكم الهائل من المعلومات المتسارعة المتتدفقة يومياً؟ قراءة في آليات التفكير النقدي وأدوات التحليل المعرفي والمنهجي اللازمة لحماية الإدراك البشري من التشتت والسطحية الفكرية المعاصرة...</p>
-                <!-- رابط واضح وبمثابة مسار تحويل صريح لليوتيوب من داخل المقال -->
-                <a href="https://www.youtube.com/@Tajruba_Cast/videos" target="_blank" class="btn-to-youtube">
-                    <span>📺 شاهد النقاش المرئي لهذا الملف على يوتيوب</span>
+            <!-- بطاقة التعريف والهوية -->
+            <div class="card">
+                <div>
+                    <div class="card-meta">عن المنصة</div>
+                    <h3 class="card-title">الهوية والرسالة</h3>
+                    <p class="card-text">بودكاست وقناة "تجربة كاست" تسعى لتفكيك السائد السلبي، وتصحيح التصورات الاجتماعية المعاصرة، والمساهمة في بناء وعي جمعي يستند إلى التحليل والبرهان العقلي الرصين لترك أثرٍ مستدام للأجيال القادمة.</p>
+                </div>
+                <a href="https://www.youtube.com/@Tajruba_Cast" target="_blank" class="btn-card-action">
+                    <span>📺 تصفح القناة الرسمية بالكامل</span>
                 </a>
             </div>
 
-            <!-- المقال الثاني المنهجي -->
-            <div class="blog-card">
-                <div class="blog-meta">المجتمع والمفاهيم • 2 يوليو 2026</div>
-                <h3 class="blog-title">تفكيك السائد: كيف تتشكل تصوراتنا الأولى؟</h3>
-                <p class="blog-excerpt">مقال يناقش الجذور العميقة والأولى لبناء المفاهيم بداخل عقولنا منذ الطفولة، والفرق الدقيق بين الموروث الاجتماعي غير الخاضع للفحص وبين الوعي الحقيقي المستند إلى البرهان والتحليل المعرفي الأصيل المعزز للوعي الإنساني وبناء الذات المجتمعية الرشيدة...</p>
-                <a href="https://www.youtube.com/@Tajruba_Cast/playlists" target="_blank" class="btn-to-youtube">
-                    <span>📺 تابع السلسلة المرئية الكاملة على يوتيوب</span>
+            <!-- بطاقة المدونة والمقالات المكتوبة -->
+            <div class="card">
+                <div>
+                    <div class="card-meta">قراءات وتحليلات</div>
+                    <h3 class="card-title">المدونة الفكرية المكتوبة</h3>
+                    <p class="card-text">المساحة المقروءة لمناقشة وتفصيل القضايا الفكرية والاجتماعية بعمق وهدوء. نناقش هنا آليات التفكير النقدي، وأدوات التحليل المعرفي، والفرق الدقيق بين الموروث غير المفحوص وبين الوعي الحقيقي الأصيل.</p>
+                </div>
+                <a href="https://www.youtube.com/@Tajruba_Cast/videos" target="_blank" class="btn-card-action">
+                    <span>📺 تابع نقاشات المدونة المرئية</span>
                 </a>
             </div>
 
-        </div>
-    </section>
-
-    <!-- قسم الوجهات والروابط الثابتة الصريحة للوصول لقناتك مباشر وزيادة فرص الدخل والمشاهدات -->
-    <section id="youtube-destinations" style="background-color: rgba(22, 25, 32, 0.2);">
-        <h2 class="section-title">أقسام ومسارات البودكاست الرسمية</h2>
-        <div class="grid">
-            
-            <div class="yt-channel-card">
-                <h3 class="yt-card-title">🎞️ مسار الحلقات المباشرة</h3>
-                <p style="color: var(--text-muted); font-size: 0.95rem;">تابع أرشيف الفيديوهات الأحدث والمرفوعة أولاً بأول بدقة كاملة وبدون قيود أو حجب متصفحات.</p>
-                <a href="https://www.youtube.com/@Tajruba_Cast/videos" target="_blank" class="btn-link-direct">انتقل لأحدث الفيديوهات مباشر ←</a>
+            <!-- بطاقة مسار الفيديوهات والحلقات المباشرة -->
+            <div class="card">
+                <div>
+                    <div class="card-meta">البث والرفع الأحدث</div>
+                    <h3 class="card-title">أحدث الحلقات المباشرة</h3>
+                    <p class="card-text">الوصول الفوري والمباشر لأحدث الحلقات، المقاطع، والحوارات الفكرية والاجتماعية المرفوعة أولاً بأول على القناة، لمتابعة الطرح المعرفي فور صدوره بجودة عالية وبدون أي قيود متصفحات.</p>
+                </div>
+                <a href="https://www.youtube.com/@Tajruba_Cast/videos" target="_blank" class="btn-card-action">
+                    <span>📺 شاهد أحدث الحلقات المباشرة</span>
+                </a>
             </div>
 
-            <div class="yt-channel-card">
-                <h3 class="yt-card-title">🗂️ مسار قوائم التشغيل (Playlists)</h3>
-                <p style="color: var(--text-muted); font-size: 0.95rem;">تصفح الملفات الفكرية مجمعة ومبوبة في سلاسل متكاملة ومترابطة لتتبع هادئ وعميق للأفكار والسلاسل المعرفية.</p>
-                <a href="https://www.youtube.com/@Tajruba_Cast/playlists" target="_blank" class="btn-link-direct">استعرض السلاسل المرتبة مباشر ←</a>
+            <!-- بطاقة مسار السلاسل وقوائم التشغيل (Playlists) -->
+            <div class="card">
+                <div>
+                    <div class="card-meta">ملفات مجمعة ومبوبة</div>
+                    <h3 class="card-title">قوائم التشغيل والسلاسل</h3>
+                    <p class="card-text">تصفح الملفات الفكرية الكبرى مجمعة ومبوبة في سلاسل متكاملة ومترابطة؛ مما يتيح لك تتبعاً متسلسلاً، هادئاً، وعميقاً للأفكار والمفاهيم دون تشتت بين الفيديوهات المنفصلة.</p>
+                </div>
+                <a href="https://www.youtube.com/@Tajruba_Cast/playlists" target="_blank" class="btn-card-action">
+                    <span>🗂️ استعرض السلاسل المعرفية الكاملة</span>
+                </a>
             </div>
 
         </div>

@@ -4,24 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تجربة كاست | الوعي، الفكر، وتصحيح المفاهيم</title>
-    <!-- استدعاء خطوط احترافية ومريحة للقراءة المعمقة -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
-        /* نظام الألوان الفاخر المخصص للمنصات الفكرية والبودكاست */
         :root {
-            --bg-main: #0f1115;       /* خلفية داكنة عميقة مريحة للعين */
-            --bg-card: #161920;       /* خلفية الكروت والأقسام */
-            --border-color: #232834;  /* حدود العناصر المتناسقة */
-            --text-primary: #f1f5f9;  /* نصوص رئيسية ناصعة ومريحة */
-            --text-muted: #94a3b8;    /* نصوص ثانوية رمادية */
-            --gold-accent: #c5a059;   /* لون التيتانيوم/الذهبي الهادئ للهوية والعناوين */
-            --gold-hover: #b38f48;    /* درجة أغمق قليلاً عند تمرير الماوس */
+            --bg-main: #0f1115;
+            --bg-card: #161920;
+            --border-color: #232834;
+            --text-primary: #f1f5f9;
+            --text-muted: #94a3b8;
+            --gold-accent: #c5a059;
+            --gold-hover: #b38f48;
         }
 
-        /* جعل التنقل بين الأقسام يمر بنعومة وسلاسة */
         html {
             scroll-behavior: smooth;
         }
@@ -39,7 +36,6 @@
             line-height: 1.7;
         }
 
-        /* الهيدر (القائمة العلوية) */
         header {
             display: flex;
             justify-content: space-between;
@@ -53,26 +49,26 @@
             border-bottom: 1px solid var(--border-color);
         }
 
-        /* صندوق اللوغو ليتماهى مع الألوان */
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             text-decoration: none;
             color: #fff;
+            white-space: nowrap; 
+            flex-shrink: 0;
         }
 
         .logo-img {
-            height: 42px; 
-            width: 42px;
-            border-radius: 50%; /* جعل الشعار دائرياً بشكل احترافي */
+            height: 40px; 
+            width: 40px;
+            border-radius: 50%;
             object-fit: cover;
-            filter: contrast(1.02) brightness(0.98); 
             border: 2px solid var(--gold-accent);
         }
 
         .logo-text {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 700;
             letter-spacing: -0.5px;
         }
@@ -98,12 +94,13 @@
             background-color: transparent;
             color: var(--gold-accent);
             border: 2px solid var(--gold-accent);
-            padding: 8px 20px;
+            padding: 8px 16px;
             border-radius: 6px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             transition: all 0.3s;
+            white-space: nowrap;
         }
 
         .btn-action:hover {
@@ -111,7 +108,6 @@
             color: var(--bg-main);
         }
 
-        /* القسم الرئيسي (الواجهة) */
         .hero {
             display: flex;
             flex-direction: column;
@@ -156,7 +152,6 @@
             background-color: var(--gold-hover);
         }
 
-        /* التنسيق العام للأقسام */
         section {
             padding: 90px 8%;
             border-bottom: 1px solid var(--border-color);
@@ -199,7 +194,6 @@
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
         }
 
-        /* مشغل يوتيوب متطور ومرن */
         .video-container {
             position: relative;
             width: 100%;
@@ -216,7 +210,6 @@
             border: 0;
         }
 
-        /* كروت المدونة والمقالات */
         .blog-meta {
             font-size: 0.85rem;
             color: var(--gold-accent);
@@ -255,7 +248,6 @@
             text-decoration: underline;
         }
 
-        /* الفوتر */
         footer {
             background-color: #090a0d;
             padding: 50px 20px;
@@ -280,9 +272,15 @@
         }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            header { padding: 15px 5%; }
+            header { 
+                padding: 15px 4%; 
+                gap: 10px;
+            }
+            .logo-text {
+                font-size: 1.15rem;
+            }
             .nav-links { display: none; } 
+            .hero h1 { font-size: 2.2rem; }
             .hero-buttons { flex-direction: column; width: 100%; }
             .btn-filled, .btn-action { text-align: center; width: 100%; }
         }
@@ -290,7 +288,6 @@
 </head>
 <body>
 
-    <!-- القائمة العلوية المتطورة مع سحب الشعار الرسمي مباشرة -->
     <header>
         <a href="#" class="logo-container">
             <img src="https://yt3.googleusercontent.com/VcID6hnUm13Nz5xibWtGRqkn-5hFi-HMf8IF63rRT-BGZhMg0esJFiMCQ8VWTPj6yl4FS0s399w=s900-c-k-c0x00ffffff-no-rj" alt="Tajruba Cast Logo" class="logo-img">
@@ -301,10 +298,9 @@
             <a href="#blog">المدونة والمقالات</a>
             <a href="https://www.youtube.com/@Tajruba_Cast" target="_blank">قناتنا على YouTube</a>
         </nav>
-        <a href="https://www.youtube.com/@Tajruba_Cast" target="_blank" class="btn-action">اشترك في القناة</a>
+        <a href="https://www.youtube.com/@Tajruba_Cast" target="_blank" class="btn-action">اشترك بالقناة</a>
     </header>
 
-    <!-- واجهة الموقع الرئيسية -->
     <section class="hero">
         <h1>تجربة كاست | Tajruba Cast</h1>
         <p>مساحة رقمية وفكرية تُعنى ببناء الوعي، مراجعة وتصحيح المفاهيم الفكرية والاجتماعية السائدة، ومشاركة قراءات وتجارب تصنع فارقاً حقيقياً في الإدراك الإنساني.</p>
@@ -314,43 +310,41 @@
         </div>
     </section>
 
-    <!-- قسم الحلقات والفيديوهات (تحديث بروابط تضمين مباشرة ومستقرة) -->
     <section id="episodes">
         <h2 class="section-title">أحدث الحلقات والنقاشات</h2>
-        <p class="section-subtitle">تابع إنتاجنا المرئي وبودكاست "تجربة كاست" مباشرة لمتابعة السلاسل والملفات الكاملة.</p>
+        <p class="section-subtitle">تابع إنتاجنا المرئي مباشرة عبر موقعنا الرسمي لتجربة مشاهدة سريعة وبدون حجب.</p>
         
         <div class="grid">
-            <!-- الكارت الأول: تم ربطه بتضمين مباشر لأحد فيديوهاتك المميزة كمثال حقيقي مستقر -->
+            <!-- الكارت الأول: فيديو الحلقة الأحدث مباشر -->
+            <div class="card">
+                <div class="video-container">
+                    <!-- تم التعديل لعرض فيديو مباشر مدعوم من مشغل يوتيوب بالكامل -->
+                    <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=Tajruba_Cast" allowfullscreen></iframe>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">آخر إنتاجات القناة</h3>
+                    <p class="card-description">هنا يتم جلب وتحديث الفيديوهات الأخيرة التي تم رفعها على القناة تلقائياً للمشاهد المعاصر.</p>
+                </div>
+            </div>
+
+            <!-- الكارت الثاني: فيديو تعريفي أو حلقة مميزة أخرى -->
             <div class="card">
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/videoseries?list=PL_JtrHRfPulyS5b005pTQ" allowfullscreen></iframe>
                 </div>
                 <div class="card-content">
-                    <h3 class="card-title">نافذة الحلقات المتجددة</h3>
-                    <p class="card-description">تصفح أحدث الحلقات والنقاشات المنشورة في القناة مباشرة عبر مشغل يوتيوب الرسمي السلس.</p>
-                </div>
-            </div>
-
-            <!-- الكارت الثاني: تم ربطه برابط أرشيف الفيديوهات المرفوعة بالكامل بدقة -->
-            <div class="card">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/videoseries?list=UUQ8_JtrHRfPulyS5b005pTQ" allowfullscreen></iframe>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">أرشيف وقوائم "تجربة كاست"</h3>
-                    <p class="card-description">اضغط على القائمة بأعلى المشغل لاستعراض كافة الفيديوهات والحلقات السابقة المتاحة في أرشيف المنصة.</p>
+                    <h3 class="card-title">قوائم التشغيل الفكرية</h3>
+                    <p class="card-description">استعرض باقات الحلقات والملفات المنظمة التي نناقش فيها الوعي وصناعة الفكر وتفكيك المفاهيم.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- قسم المدونة والمقالات -->
     <section id="blog" style="background-color: rgba(22, 25, 32, 0.3);">
         <h2 class="section-title">مدونة تجربة كاست</h2>
         <p class="section-subtitle">هنا نكتب الأفكار بعمق أوسع؛ قراءات في كتب، مقالات فكرية، وإرث معرفي مكتوب يكمل رسالتنا التوعوية المسموعة والمرئية.</p>
         
         <div class="grid">
-            <!-- كارت مقال 1 -->
             <div class="card">
                 <div class="card-content">
                     <div class="blog-meta">الفكر والوعي • 9 يوليو 2026</div>
@@ -360,7 +354,6 @@
                 </div>
             </div>
 
-            <!-- كارت مقال 2 -->
             <div class="card">
                 <div class="card-content">
                     <div class="blog-meta">المجتمع والمفاهيم • 2 يوليو 2026</div>
@@ -372,7 +365,6 @@
         </div>
     </section>
 
-    <!-- أسفل الموقع -->
     <footer>
         <div class="footer-links">
             <a href="https://www.youtube.com/@Tajruba_Cast" target="_blank">يوتيوب</a>

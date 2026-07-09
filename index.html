@@ -19,6 +19,7 @@
             --text-muted: #94a3b8;    /* نصوص ثانوية رمادية */
             --gold-accent: #c5a059;   /* لون التيتانيوم/الذهبي الهادئ للهوية والعناوين */
             --gold-hover: #b38f48;    /* درجة أغمق قليلاً عند تمرير الماوس */
+            --yt-red: #ff0000;        /* لون يوتيوب الصريح لجذب النقرات */
         }
 
         /* جعل التنقل بين الأقسام يمر بنعومة وسلاسة */
@@ -53,13 +54,15 @@
             border-bottom: 1px solid var(--border-color);
         }
 
-        /* صندوق اللوغو ليتماهى مع الألوان */
+        /* صندوق اللوغو المطور لضمان سلامة النص في الموبايل */
         .logo-container {
             display: flex;
             align-items: center;
             gap: 12px;
             text-decoration: none;
             color: #fff;
+            white-space: nowrap; /* يمنع انقسام النص أو نزول كلمة كاست لسطر جديد */
+            flex-shrink: 0;      /* يمنع تقلص اللوغو عند ضغط الشاشة */
         }
 
         .logo-img {
@@ -70,12 +73,14 @@
             /* دمج بصري خفيف ليتماهى اللوغو مع الطابع الداكن للموقع */
             filter: contrast(1.02) brightness(0.98); 
             border: 2px solid var(--gold-accent);
+            flex-shrink: 0;
         }
 
         .logo-text {
             font-size: 1.4rem;
             font-weight: 700;
             letter-spacing: -0.5px;
+            white-space: nowrap;
         }
 
         .logo-text span {
@@ -105,6 +110,8 @@
             font-weight: 600;
             font-size: 0.9rem;
             transition: all 0.3s;
+            white-space: nowrap;
+            flex-shrink: 0;
         }
 
         .btn-action:hover {
@@ -193,6 +200,8 @@
             overflow: hidden;
             border: 1px solid var(--border-color);
             transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
         }
 
         .card:hover {
@@ -227,6 +236,9 @@
 
         .card-content {
             padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
         }
 
         .card-title {
@@ -240,20 +252,32 @@
             font-size: 0.95rem;
             color: var(--text-muted);
             margin-bottom: 20px;
+            flex-grow: 1;
         }
 
-        .read-more {
-            color: var(--gold-accent);
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 600;
+        /* طريقة الربط الذكية الجديدة لروابط المقالات بلمسة حمراء تفاعلية */
+        .read-more-btn {
             display: inline-flex;
             align-items: center;
-            gap: 5px;
+            justify-content: center;
+            gap: 8px;
+            background-color: #1e222b;
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            padding: 10px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            margin-top: auto;
         }
 
-        .read-more:hover {
-            text-decoration: underline;
+        .read-more-btn:hover {
+            background-color: var(--yt-red);
+            color: #fff;
+            border-color: var(--yt-red);
+            transform: scale(1.02);
         }
 
         /* الفوتر */
@@ -282,7 +306,8 @@
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.2rem; }
-            header { padding: 15px 5%; }
+            header { padding: 15px 4%; }
+            .logo-text { font-size: 1.15rem; }
             .nav-links { display: none; } 
             .hero-buttons { flex-direction: column; width: 100%; }
             .btn-filled, .btn-action { text-align: center; width: 100%; }
@@ -291,10 +316,9 @@
 </head>
 <body>
 
-    <!-- القائمة العلوية المتطورة مع سحب الشعار الرسمي مباشرة -->
+    <!-- القائمة العلوية المتطورة -->
     <header>
         <a href="#" class="logo-container">
-            <!-- تم ربط الصورة برابط شعار قناتك الرسمي مباشرة من خوادم يوتيوب -->
             <img src="https://yt3.googleusercontent.com/VcID6hnUm13Nz5xibWtGRqkn-5hFi-HMf8IF63rRT-BGZhMg0esJFiMCQ8VWTPj6yl4FS0s399w=s900-c-k-c0x00ffffff-no-rj" alt="Tajruba Cast Logo" class="logo-img">
             <div class="logo-text">تجربة <span>كاست</span></div>
         </a>
@@ -358,7 +382,9 @@
                     <div class="blog-meta">الفكر والوعي • 9 يوليو 2026</div>
                     <h3 class="card-title">صناعة الوعي في عصر التدفق المعرفي</h3>
                     <p class="card-description">كيف يمكن للإنسان المعاصر الحفاظ على توازنه الفكري وتصفية المفاهيم وسط هذا الكم الهائل من المعلومات المتسارعة؟ قراءة في آليات التفكير النقدي المعاصر...</p>
-                    <a href="#" class="read-more">اقرأ المقال كاملاً ←</a>
+                    <a href="https://www.youtube.com/@Tajruba_Cast/videos" target="_blank" class="read-more-btn">
+                        <span>📺 شاهد النقاش المرئي على يوتيوب</span>
+                    </a>
                 </div>
             </div>
 
@@ -366,9 +392,11 @@
             <div class="card">
                 <div class="card-content">
                     <div class="blog-meta">المجتمع والمفاهيم • 2 يوليو 2026</div>
-                    <h3 class="card-title">تفكيك السائد: كيف تتشكل تصوراتنا الأولى؟</h3>
+                    <h3 class="card-title">تفكيك السائد: كيف تتشكل تصوراتنا الأولى?</h3>
                     <p class="card-description">مقال يناقش الجذور الأولى لبناء المفاهيم بداخل عقولنا، والفرق بين الموروث الاجتماعي والوعي الحقيقي المستند إلى التحليل والبرهان المعرفي الأصيل...</p>
-                    <a href="#" class="read-more">اقرأ المقال كاملاً ←</a>
+                    <a href="https://www.youtube.com/@Tajruba_Cast/playlists" target="_blank" class="read-more-btn">
+                        <span>📺 تابع السلسلة الكاملة على يوتيوب</span>
+                    </a>
                 </div>
             </div>
         </div>

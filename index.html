@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,24 +8,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+    
     <style>
         /* نظام الألوان الفاخر المخصص للمنصات الفكرية والبودكاست */
         :root {
-            --bg-main: #0f1115;
-            /* خلفية داكنة عميقة مريحة للعين */
-            --bg-card: #161920;
-            /* خلفية الكروت والأقسام */
-            --border-color: #232834;
-            /* حدود العناصر المتناسقة */
-            --text-primary: #f1f5f9;
-            /* نصوص رئيسية ناصعة ومريحة */
-            --text-muted: #94a3b8;
-            /* نصوص ثانوية رمادية */
-            --gold-accent: #c5a059;
-            /* لون التيتانيوم/الذهبي الهادئ للهوية والعناوين */
-            --gold-hover: #b38f48;
-            /* درجة أغمق قليلاً عند تمرير الماوس */
+            --bg-main: #0f1115;       /* خلفية داكنة عميقة مريحة للعين */
+            --bg-card: #161920;       /* خلفية الكروت والأقسام */
+            --border-color: #232834;  /* حدود العناصر المتناسقة */
+            --text-primary: #f1f5f9;  /* نصوص رئيسية ناصعة ومريحة */
+            --text-muted: #94a3b8;    /* نصوص ثانوية رمادية */
+            --gold-accent: #c5a059;   /* لون التيتانيوم/الذهبي الهادئ للهوية والعناوين */
+            --gold-hover: #b38f48;    /* درجة أغمق قليلاً عند تمرير الماوس */
         }
 
         /* جعل التنقل بين الأقسام يمر بنعومة وسلاسة */
@@ -71,13 +63,11 @@
         }
 
         .logo-img {
-            height: 42px;
+            height: 42px; 
             width: 42px;
-            border-radius: 50%;
-            /* جعل الشعار دائرياً بشكل احترافي */
+            border-radius: 50%; /* جعل الشعار دائرياً بشكل احترافي */
             object-fit: cover;
-            /* دمج بصري خفيف ليتماهى اللوغو مع الطابع الداكن للموقع */
-            filter: contrast(1.02) brightness(0.98);
+            filter: contrast(1.02) brightness(0.98); 
             border: 2px solid var(--gold-accent);
         }
 
@@ -170,7 +160,7 @@
         section {
             padding: 90px 8%;
             border-bottom: 1px solid var(--border-color);
-            scroll-margin-top: 80px;
+            scroll-margin-top: 80px; 
         }
 
         .section-title {
@@ -290,40 +280,20 @@
         }
 
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            header {
-                padding: 15px 5%;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                width: 100%;
-            }
-
-            .btn-filled,
-            .btn-action {
-                text-align: center;
-                width: 100%;
-            }
+            .hero h1 { font-size: 2.2rem; }
+            header { padding: 15px 5%; }
+            .nav-links { display: none; } 
+            .hero-buttons { flex-direction: column; width: 100%; }
+            .btn-filled, .btn-action { text-align: center; width: 100%; }
         }
     </style>
 </head>
-
 <body>
 
     <!-- القائمة العلوية المتطورة مع سحب الشعار الرسمي مباشرة -->
     <header>
         <a href="#" class="logo-container">
-            <!-- تم ربط الصورة برابط شعار قناتك الرسمي مباشرة من خوادم يوتيوب -->
-            <img src="https://yt3.googleusercontent.com/VcID6hnUm13Nz5xibWtGRqkn-5hFi-HMf8IF63rRT-BGZhMg0esJFiMCQ8VWTPj6yl4FS0s399w=s900-c-k-c0x00ffffff-no-rj"
-                alt="Tajruba Cast Logo" class="logo-img">
+            <img src="https://yt3.googleusercontent.com/VcID6hnUm13Nz5xibWtGRqkn-5hFi-HMf8IF63rRT-BGZhMg0esJFiMCQ8VWTPj6yl4FS0s399w=s900-c-k-c0x00ffffff-no-rj" alt="Tajruba Cast Logo" class="logo-img">
             <div class="logo-text">تجربة <span>كاست</span></div>
         </a>
         <nav class="nav-links">
@@ -337,44 +307,38 @@
     <!-- واجهة الموقع الرئيسية -->
     <section class="hero">
         <h1>تجربة كاست | Tajruba Cast</h1>
-        <p>مساحة رقمية وفكرية تُعنى ببناء الوعي، مراجعة وتصحيح المفاهيم الفكرية والاجتماعية السائدة، ومشاركة قراءات
-            وتجارب تصنع فارقاً حقيقياً في الإدراك الإنساني.</p>
+        <p>مساحة رقمية وفكرية تُعنى ببناء الوعي، مراجعة وتصحيح المفاهيم الفكرية والاجتماعية السائدة، ومشاركة قراءات وتجارب تصنع فارقاً حقيقياً في الإدراك الإنساني.</p>
         <div class="hero-buttons">
             <a href="#episodes" class="btn-filled">شاهد الحلقات</a>
             <a href="#blog" class="btn-action" style="padding: 14px 30px;">اقرأ آخر المقالات</a>
         </div>
     </section>
 
-    <!-- قسم الحلقات والفيديوهات -->
+    <!-- قسم الحلقات والفيديوهات (تحديث بروابط تضمين مباشرة ومستقرة) -->
     <section id="episodes">
         <h2 class="section-title">أحدث الحلقات والنقاشات</h2>
-        <p class="section-subtitle">تابع إنتاجنا المرئي وبودكاست "تجربة كاست" مباشرة لمتابعة السلاسل والملفات الكاملة.
-        </p>
-
+        <p class="section-subtitle">تابع إنتاجنا المرئي وبودكاست "تجربة كاست" مباشرة لمتابعة السلاسل والملفات الكاملة.</p>
+        
         <div class="grid">
-            <!-- الكارت الأول: يعرض أحدث الفيديوهات المرفوعة بالقناة -->
+            <!-- الكارت الأول: تم ربطه بتضمين مباشر لأحد فيديوهاتك المميزة كمثال حقيقي مستقر -->
             <div class="card">
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed?listType=user_uploads&user=Tajruba_Cast"
-                        allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/videoseries?list=PL_JtrHRfPulyS5b005pTQ" allowfullscreen></iframe>
                 </div>
                 <div class="card-content">
-                    <h3 class="card-title">آخر الحلقات المرفوعة</h3>
-                    <p class="card-description">نافذة متصلة مباشرة بيوتيوب؛ تعرض لك تلقائياً آخر الفيديوهات التي تم
-                        نشرها دون تعقيد تقني.</p>
+                    <h3 class="card-title">نافذة الحلقات المتجددة</h3>
+                    <p class="card-description">تصفح أحدث الحلقات والنقاشات المنشورة في القناة مباشرة عبر مشغل يوتيوب الرسمي السلس.</p>
                 </div>
             </div>
 
-            <!-- الكارت الثاني: يعرض أرشيف وقوائم الكاست كاملة للزائر -->
+            <!-- الكارت الثاني: تم ربطه برابط أرشيف الفيديوهات المرفوعة بالكامل بدقة -->
             <div class="card">
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed?listType=playlist&list=UUQ8_JtrHRfPulyS5b005pTQ"
-                        allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/videoseries?list=UUQ8_JtrHRfPulyS5b005pTQ" allowfullscreen></iframe>
                 </div>
                 <div class="card-content">
                     <h3 class="card-title">أرشيف وقوائم "تجربة كاست"</h3>
-                    <p class="card-description">اضغط على الأيقونة بأعلى يسار المشغل لتصفح كافة حلقات القناة السابقة،
-                        والانتقال بين السلاسل المتنوعة.</p>
+                    <p class="card-description">اضغط على القائمة بأعلى المشغل لاستعراض كافة الفيديوهات والحلقات السابقة المتاحة في أرشيف المنصة.</p>
                 </div>
             </div>
         </div>
@@ -383,17 +347,15 @@
     <!-- قسم المدونة والمقالات -->
     <section id="blog" style="background-color: rgba(22, 25, 32, 0.3);">
         <h2 class="section-title">مدونة تجربة كاست</h2>
-        <p class="section-subtitle">هنا نكتب الأفكار بعمق أوسع؛ قراءات في كتب، مقالات فكرية، وإرث معرفي مكتوب يكمل
-            رسالتنا التوعوية المسموعة والمرئية.</p>
-
+        <p class="section-subtitle">هنا نكتب الأفكار بعمق أوسع؛ قراءات في كتب، مقالات فكرية، وإرث معرفي مكتوب يكمل رسالتنا التوعوية المسموعة والمرئية.</p>
+        
         <div class="grid">
             <!-- كارت مقال 1 -->
             <div class="card">
                 <div class="card-content">
                     <div class="blog-meta">الفكر والوعي • 9 يوليو 2026</div>
                     <h3 class="card-title">صناعة الوعي في عصر التدفق المعرفي</h3>
-                    <p class="card-description">كيف يمكن للإنسان المعاصر الحفاظ على توازنه الفكري وتصفية المفاهيم وسط
-                        هذا الكم الهائل من المعلومات المتسارعة؟ قراءة في آليات التفكير النقدي المعاصر...</p>
+                    <p class="card-description">كيف يمكن للإنسان المعاصر الحفاظ على توازنه الفكري وتصفية المفاهيم وسط هذا الكم الهائل من المعلومات المتسارعة؟ قراءة في آليات التفكير النقدي المعاصر...</p>
                     <a href="#" class="read-more">اقرأ المقال كاملاً ←</a>
                 </div>
             </div>
@@ -403,8 +365,7 @@
                 <div class="card-content">
                     <div class="blog-meta">المجتمع والمفاهيم • 2 يوليو 2026</div>
                     <h3 class="card-title">تفكيك السائد: كيف تتشكل تصوراتنا الأولى؟</h3>
-                    <p class="card-description">مقال يناقش الجذور الأولى لبناء المفاهيم بداخل عقولنا، والفرق بين الموروث
-                        الاجتماعي والوعي الحقيقي المستند إلى التحليل والبرهان المعرفي الأصيل...</p>
+                    <p class="card-description">مقال يناقش الجذور الأولى لبناء المفاهيم بداخل عقولنا، والفرق بين الموروث الاجتماعي والوعي الحقيقي المستند إلى التحليل والبرهان المعرفي الأصيل...</p>
                     <a href="#" class="read-more">اقرأ المقال كاملاً ←</a>
                 </div>
             </div>
@@ -423,5 +384,4 @@
     </footer>
 
 </body>
-
 </html>

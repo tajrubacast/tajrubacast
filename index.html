@@ -748,8 +748,74 @@
             var currentUrl = window.location.href;
             var facebookUrl = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(currentUrl);
             window.open(facebookUrl, '_blank');
+            <p>الصديق ليس مجرد شخص نقضي معه وقتاً ممتعاً أو نلعب معه كرة القدم. الصديق هو المهندس الخفي الذي يعيد صياغة أفكارك وتصوراتك؛ تجاه الله، المجتمع، القيم، الحق والباطل.</p>
+                <p>لذلك، يعد الصديق هو "المصدر الثاني والخطير للبيانات" بعد العائلة. بل هو القوة الوحيدة القادرة على هدم كل الأكواد والقيم التي برمجتها الأسرة داخل أبنائها منذ الصغر بمجرد الدعم النفسي والقبول غير المشروط لأخطائهم.</p>
+
+                <h3>الصدور والقلوب: كيف تسري العدوى الفكرية؟</h3>
+                <p>إن الخطورة الحقيقية في مصاحبة الآخرين لا تكمن في نصائحهم المباشرة أو توجيهاتهم الصريحة، بل في "العدوى الصامتة" التي تتسلل برفق إلى دواخلنا. فالإنسان كائن محاكٍ بطبعه، يميل دون وعي إلى تبني لغة جلسائه، وطريقتهم في تقييم الأشياء، ونظرتهم للنجاح والفشل.</p>
+                <p>حين تحيط نفسك بأصدقاء تغلب عليهم النظرة المادية البحتة للحياة، الذين يزنون قيمة المرء بما يملك من سيارة أو منصب أو رصيد؛ تجد فؤادك يمرض ببطء، وتتحول تصوراتك الفطرية العميقة إلى قشور سطحية تلهث خلف بريق زائف. وعلى النقيض، حين تجالس من يذكرك بالله حال غفلتك، ويوجه بوصلتك نحو البناء الحقيقي والواعي للإنسان، تجد أن قيمك تتشذب وتزداد رسوخاً وثباتاً أمام مغريات العصر.</p>
+
+                <h3>تكامل الرفقة: من ظلمات الهوى إلى نور الهدى</h3>
+                <p>لقد صاغ الإسلام هذه العلاقة بمفهوم "الموالاة" والمحبة في الله، جاعلاً المرء مع من أحب. إن الوفاء الحقيقي في الصداقة ليس في التستر على الأخطاء أو تبرير الانحرافات بذريعة الوقوف بجانب الصديق، بل هو الوفاء الذي امتد بين عمير بن وهب وصفوان بن أمية؛ وفاء لا يقبل لصديقه الهلاك، ويسعى جاهداً ليأخذ بيده إلى سفينة النجاة في الدنيا والآخرة.</p>
+                <p>تأمل نفسك جيداً في مرآة رفاقك؛ هل يقربونك من حقيقة عبوديتك وافتقارك لله سبحانه، أم يدفعونك بخطوات متسارعة نحو الطغيان والاستغناء الوهمي؟ تذكر دائماً أن من يصنع تصوراتك اليوم، يحدد مسار خطوتك غداً.</p>
+
+                <div class="share-box" style="margin-top: 30px; padding-top: 20px;">
+                    <button onclick="shareOnWhatsApp('article3', 'المرآة الخفية: كيف يصنعنا أصدقاؤنا؟')" class="share-btn share-whatsapp">
+                        <span>💬 شارك عبر واتساب</span>
+                    </button>
+                    <button onclick="shareOnFacebook()" class="share-btn share-facebook">
+                        <span>👍 شارك عبر فيسبوك</span>
+                    </button>
+                </div>
+                <p style="font-size: 0.9rem; color: var(--text-muted); border-top: 1px solid var(--border-color); padding-top: 15px; margin-top: 30px;">مقالة مبنية على تفريغ الحلقة الثالثة من السلسلة الصوتية - نُشرت على مدونة القناة.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- تذييل الصفحة وسكريبتات التشغيل والمشاركة -->
+    <footer>
+        <div class="footer-links">
+            <a href="#episodes">الحلقات</a>
+            <a href="#blog">المدونة</a>
+            <a href="https://www.youtube.com/@Tajruba_Cast" target="_blank">يوتيوب</a>
+        </div>
+        <p>جميع الحقوق محفوظة © تجربة كاست 2026</p>
+    </footer>
+
+    <script>
+        // دالة فتح النافذة المنبثقة للمقالات
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+            document.body.style.overflow = "hidden"; // منع التمرير خلف النافذة
+        }
+
+        // دالة إغلاق النافذة المنبثقة
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+            document.body.style.overflow = "auto"; // إعادة التمرير الطبيعي
+        }
+
+        // إغلاق النافذة عند الضغط في أي مكان خارج محتوى المقال
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = "none";
+                document.body.style.overflow = "auto";
+            }
+        }
+
+        // دالة مشاركة المقالات عبر الواتساب
+        function shareOnWhatsApp(articleId, title) {
+            const url = window.location.href.split('#')[0] + '#' + articleId;
+            const text = encodeURIComponent(title + " \nإليك هذا المقال الفكري المميز من مدونة تجربة كاست: \n") + encodeURIComponent(url);
+            window.open('https://api.whatsapp.com/send?text=' + text, '_blank');
+        }
+
+        // دالة مشاركة المقالات عبر الفيسبوك
+        function shareOnFacebook() {
+            const url = encodeURIComponent(window.location.href);
+            window.open('https://www.facebook.com/sharer/sharer.php?u=' + url, '_blank');
         }
     </script>
-
 </body>
 </html>
+   
